@@ -4,11 +4,22 @@
 </div>
 
 <h2 align = "center"> ACTIONS </h2>
-# File
-- Save: saves file. If file is a new file, then it initializes it 
-- New: creates a new file
-- Open: opens an existing file
-- Quit: quits applications
+
+# Algorithms
+- Merge Sort
+- Binary Search
+- Selection Sort
+- Insertion Sort
+- Linear Search 
+- Bubble Sort
+
+
+
+# Data Structures
+- Linked List
+- Binary Tree
+- Trees
+- Binary Search Trees
 
 <h2 align = "center"> FEATURES </h2>
 - has keyboard shortcuts
