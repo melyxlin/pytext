@@ -1,6 +1,6 @@
 <h1 align="center">Pytext</h1>
 <div align="center">
-	A simple Python TextEditor using the Tkinter library
+	A simple text editor written in python using the Tkinter library
 </div>
 
 # ACTIONS
