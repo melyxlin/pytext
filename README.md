@@ -4,7 +4,7 @@
 </div>
 
 # ACTIONS
-- Save: saves file. If file is a new file, then intializes using Save AS
+- Save: saves file. If file is a new file, then intializes using Save As
 - Save As: initializes the new file
 - New: creates a new file
 - Open: opens an existing file
