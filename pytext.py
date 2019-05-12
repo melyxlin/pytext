@@ -50,6 +50,9 @@ def closeFile(e=None):
 def undoAction(e=None):
     text.edit_undo()
 
+def redoAction(e = None):
+    text.edit_redo()
+
 
 root = Tk() #main window
 root.title("Pytext - a simple python text editor")
@@ -74,7 +77,7 @@ menuBar.add_cascade(label = "File", menu = fileMenu)
 
 editMenu = Menu(menuBar) #edit options
 editMenu.add_command(label = "Undo", command = undoAction, accelerator = "Control-Z")
-editMenu.add_command(label = "Redo", accelerator = "Control-Y")
+editMenu.add_command(label = "Redo", command = redoAction, accelerator = "Control-Y")
 editMenu.add_separator()
 editMenu.add_command(label = "Cut", accelerator = "Control-X")
 editMenu.add_command(label = "Copy", accelerator = "Control-C")
