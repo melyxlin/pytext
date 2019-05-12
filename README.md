@@ -3,31 +3,21 @@
 	A simple Python TextEditor using the Tkinter library
 </div>
 
-<h2 align = "center"> ACTIONS </h2>
+# ACTIONS
+- Save:
+- Save As:
+- New:
+- Open
+- Quit
 
-# Algorithms
-- Merge Sort
-- Binary Search
-- Selection Sort
-- Insertion Sort
-- Linear Search 
-- Bubble Sort
-
-
-
-# Data Structures
-- Linked List
-- Binary Tree
-- Trees
-- Binary Search Trees
-
-<h2 align = "center"> FEATURES </h2>
+# FEATURES
 - has keyboard shortcuts
 
-<h2 align = "center"> FUTURE </h2>
+# FUTURE
 - syntax highlighting
 - line numbers
 - find and replace option
+
 
 
 
