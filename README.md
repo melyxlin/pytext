@@ -22,6 +22,9 @@
 - syntax highlighting
 - line numbers
 - find and replace option
+- Font selection
+- Bold, Italic, Underline options
+- Color options
 
 
 
