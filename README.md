@@ -9,6 +9,11 @@
 - New: creates a new file
 - Open: opens an existing file
 - Quit: quits application
+- Undo: undos an action
+- Redo: undos an undo
+- Cut: deletes and copies a selected text
+- Copy: copies a selected text
+- Paste: paste a selected text
 
 # FEATURES
 - has keyboard shortcuts
