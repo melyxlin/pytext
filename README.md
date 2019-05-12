@@ -4,7 +4,7 @@
 </div>
 
 <h2 align = "center"> ACTIONS </h2>
-#File
+# File
 - Save: saves file. If file is a new file, then it initializes it 
 - New: creates a new file
 - Open: opens an existing file
