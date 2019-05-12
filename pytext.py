@@ -28,12 +28,12 @@ def saveFile(e=None):
 def saveFileAs(e=None):
     global filename
     f = asksaveasfile(mode = 'w', defaultextension = '.txt')
-    filename = f.name
     t = text.get(0.0, END)
     try:
         f.write(t.rstrip()) 
     except:
         showerror(title = "Error!", message = "Unable to save file.")
+    filename = f.name
 
 def openFile(e=None):
     global filename
@@ -47,30 +47,44 @@ def closeFile(e=None):
     global root
     root.quit()
 
+
 root = Tk() #main window
 root.title("Pytext - a simple python text editor")
+root.minsize(width = 400, height = 400)
+root.maxsize(width = 400, height = 400)
+
+
+
+text = Text(root, width = 400, height = 400, undo = True)
+text.pack()
+
+menuBar = Menu(root) #menu bar
+
+fileMenu = Menu(menuBar) #file options
+fileMenu.add_command(label = "New", command = newFile, accelerator = "Control-N")
+fileMenu.add_command(label = "Open", command = openFile, accelerator = "Control-O")
+fileMenu.add_command(label = "Save", command = saveFile, accelerator = "Control-S")
+fileMenu.add_command(label = "Save As", command = saveFileAs, accelerator = "Control-Shift-S")
+fileMenu.add_separator()
+fileMenu.add_command(label = "Quit", command = closeFile, accelerator = "Control-Q")
+menuBar.add_cascade(label = "File", menu = fileMenu)
+
+editMenu = Menu(menuBar) #edit options
+editMenu.add_command(label = "Undo", accelerator = "Control-Z")
+editMenu.add_command(label = "Redo", accelerator = "Control-Y")
+editMenu.add_separator()
+editMenu.add_command(label = "Cut", accelerator = "Control-X")
+editMenu.add_command(label = "Copy", accelerator = "Control-C")
+editMenu.add_command(label = "Paste", accelerator = "Control-V")
+menuBar.add_cascade(label = "Edit", menu = editMenu)
+
 root.bind('<Control-q>', closeFile)
 root.bind('<Control-s>', saveFile)
 root.bind('<Control-o>', openFile)
 root.bind('<Control-n>', newFile)
 root.bind('<Control-S>', saveFileAs)
-root.minsize(width = 400, height = 400)
-root.maxsize(width = 400, height = 400)
-
-text = Text(root, width = 400, height = 400)
-text.pack()
-
-menuBar = Menu(root) #menu bar
-
-filemenu = Menu(menuBar) #file options
-filemenu.add_command(label = "New", command = newFile)
-filemenu.add_command(label = "Open", command = openFile)
-filemenu.add_command(label = "Save", command = saveFile)
-filemenu.add_command(label = "Save As", command = saveFileAs)
-filemenu.add_separator()
-filemenu.add_command(label = "Quit", command = closeFile)
-menuBar.add_cascade(label = "File", menu = filemenu)
-
+root.bind('<Control-z>', undoAction)
+root.bind('<Control-y>', redoAction)
 
 root.config(menu = menuBar)
 root.mainloop()
