@@ -4,11 +4,11 @@
 </div>
 
 # ACTIONS
-- Save:
-- Save As:
-- New:
-- Open
-- Quit
+- Save: saves file. If file is a new file, then intializes using Save AS
+- Save As: initializes the new file
+- New: creates a new file
+- Open: opens an existing file
+- Quit: quits application
 
 # FEATURES
 - has keyboard shortcuts
