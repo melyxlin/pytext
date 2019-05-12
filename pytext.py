@@ -79,9 +79,9 @@ editMenu = Menu(menuBar) #edit options
 editMenu.add_command(label = "Undo", command = undoAction, accelerator = "Control-Z")
 editMenu.add_command(label = "Redo", command = redoAction, accelerator = "Control-Y")
 editMenu.add_separator()
-editMenu.add_command(label = "Cut", accelerator = "Control-X")
-editMenu.add_command(label = "Copy", accelerator = "Control-C")
-editMenu.add_command(label = "Paste", accelerator = "Control-V")
+editMenu.add_command(label = "Cut", command=lambda: root.focus_get().event_generate('<<Cut>>'), accelerator = "Control-X")
+editMenu.add_command(label = "Copy", command=lambda: root.focus_get().event_generate('<<Copy>>'), accelerator = "Control-C")
+editMenu.add_command(label = "Paste", command=lambda: root.focus_get().event_generate('<<Paste>>'), accelerator = "Control-V")
 menuBar.add_cascade(label = "Edit", menu = editMenu)
 
 root.bind('<Control-q>', closeFile)
