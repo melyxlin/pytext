@@ -14,10 +14,10 @@ def newFile(e=None):
 
 def saveFile(e=None):
     """ 
-        saves file
+        saves file with latest content. If file is not stored on computer, stores it on computer
     """
     global filename
-    if filename == None: 
+    if filename == None: #case when file is not stored
         saveFileAs()
     else:
         t = text.get(0.0, END)
@@ -26,16 +26,22 @@ def saveFile(e=None):
         f.close()
 
 def saveFileAs(e=None):
+    """
+        stores file in a location on the computer
+    """
     global filename
     f = asksaveasfile(mode = 'w', defaultextension = '.txt')
     t = text.get(0.0, END)
-    try:
+    try: #error handling
         f.write(t.rstrip()) 
-    except:
+    except: 
         showerror(title = "Error!", message = "Unable to save file.")
-    filename = f.name
+    filename = f.name #initiaizes the name of the file
 
 def openFile(e=None):
+    """
+        opens file
+    """
     global filename
     f = askopenfile(mode = 'r')
     t = f.read()
@@ -44,13 +50,22 @@ def openFile(e=None):
     text.insert(0.0, t)
 
 def closeFile(e=None):
+    """
+        closes file
+    """
     global root
     root.quit()
 
 def undoAction(e=None):
+    """
+        undos an action
+    """
     text.edit_undo()
 
 def redoAction(e = None):
+    """
+        redos an action
+    """
     text.edit_redo()
 
 
@@ -84,6 +99,7 @@ editMenu.add_command(label = "Copy", command=lambda: root.focus_get().event_gene
 editMenu.add_command(label = "Paste", command=lambda: root.focus_get().event_generate('<<Paste>>'), accelerator = "Control-V")
 menuBar.add_cascade(label = "Edit", menu = editMenu)
 
+#keyboard shortcuts
 root.bind('<Control-q>', closeFile)
 root.bind('<Control-s>', saveFile)
 root.bind('<Control-o>', openFile)
